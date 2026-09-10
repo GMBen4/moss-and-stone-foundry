@@ -1,0 +1,56 @@
+<form class="{{cssClass}} moss-sheet" autocomplete="off">
+  <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+    <div class="header-fields"><input class="name" name="name" type="text" value="{{actor.name}}" placeholder="Party / Expedition" /></div>
+  </header>
+
+  <section class="party-panel">
+    <h2>Predator Round</h2>
+    <p class="rules-note">Uses the highest Predator Rating among Adventurers and Enemies in the active Combat Encounter.</p>
+    <div class="roll-bar"><button type="button" data-party-action="guarantee-predator">Guarantee Win — Spend Hero Die</button><button type="button" data-party-action="predator-round">Resolve Predator Round</button></div>
+    <div class="predator-status">{{predatorRoundLabel}}</div>
+  </section>
+
+  <section class="party-panel">
+    <h2>Shared Supplies & Rest</h2>
+    <div class="supply-counter"><button type="button" data-adjust="supplies.value" data-delta="-1">−</button><input type="number" name="system.supplies.value" value="{{system.supplies.value}}"/><span>/</span><input type="number" name="system.supplies.max" value="{{system.supplies.max}}"/><button type="button" data-adjust="supplies.value" data-delta="1">+</button></div>
+    <div class="roll-bar">
+      <button type="button" data-roll="forage" data-roll-mode="normal">Forage</button>
+      <button type="button" data-roll="forage" data-roll-mode="boon">Forage + Boon</button>
+      <button type="button" data-roll="forage" data-roll-mode="bane">Forage + Bane</button>
+      <button type="button" data-party-action="rest-supply">Rest with 1 Supply</button>
+      <button type="button" data-party-action="no-supply">Night Without Supplies</button>
+    </div>
+    <label>Current Safe Zone Tier <input type="number" min="0" max="3" name="system.safeZoneTier" value="{{system.safeZoneTier}}"/></label>
+    <div class="roll-bar">
+      <button type="button" data-party-action="resupply">Resupply at Safe Zone</button>
+      <button type="button" data-party-action="safe-rest">Full Rest at Safe Zone</button>
+    </div>
+    <p class="rules-note">Foraging finds 1 Supply on a kept 6; use Boon/Bane when the environment warrants it. Tier 1 resupplies to 2, Tier 2 to 4, Tier 3 to 10, plus 2 per Reptile Rider from Saddle Bags. A normal supplied rest heals 1 Strike; Safe Zone rest fully heals normal Adventurers. Corrupted Adventurers use their special daily recovery instead.</p>
+  </section>
+
+
+  <section class="party-panel gm-tools-panel">
+    <h2>GM Scene Tools</h2>
+    <div class="roll-bar">
+      <button type="button" data-party-action="combat-summary">Post Encounter Snapshot</button>
+      <button type="button" data-party-action="end-scene">End Scene / Clear Scene Effects</button>
+    </div>
+    <button type="button" data-party-action="identify-stones">Identify Party Whisper Stones at Safe Zone</button>
+    <p class="rules-note">End Scene resets Flaw use, scene-limited Whisper Stone effects, and Predator round state. Identification requires a Tier 2 or Tier 3 Safe Zone.</p>
+    {{#if hasActiveCombat}}
+      <div class="combat-roster">
+        <h3>Active Encounter</h3>
+        {{#each combatRoster}}
+          <div class="combat-roster-row"><strong>{{name}}</strong><span>{{typeLabel}}</span><span>Strikes {{strikes}} / {{maxStrikes}}</span><span>Predator {{predatorDice}}d6</span></div>
+        {{/each}}
+      </div>
+    {{else}}
+      <p class="empty-inventory">No active Combat Encounter.</p>
+    {{/if}}
+  </section>
+
+  <label>Active Supply Penalties<textarea name="system.supplyPenalties" readonly>{{system.supplyPenalties}}</textarea></label>
+  <label>Travel Notes<textarea class="big-notes" name="system.travelNotes">{{system.travelNotes}}</textarea></label>
+  <label>General Notes<textarea name="system.notes">{{system.notes}}</textarea></label>
+</form>
