@@ -1,0 +1,27 @@
+{
+  "id": "moss-and-stone",
+  "title": "Moss and Stone for EZD6",
+  "description": "A lightweight Foundry VTT system for Moss and Stone layered on the EZD6 core rules.",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "13"
+  },
+  "authors": [
+    {
+      "name": "Community Foundry Build"
+    }
+  ],
+  "esmodules": [
+    "scripts/moss-and-stone.js"
+  ],
+  "styles": [
+    "styles/moss-and-stone.css"
+  ],
+  "languages": [],
+  "packs": [],
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "primaryTokenAttribute": "strikes",
+  "secondaryTokenAttribute": "karma"
+}
