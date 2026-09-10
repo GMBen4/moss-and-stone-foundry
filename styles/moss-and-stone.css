@@ -1,0 +1,351 @@
+.moss-and-stone.sheet.actor .window-content {
+  background: #e9eadc;
+  padding: 8px;
+  color: #20251f;
+}
+
+.moss-sheet { height: 100%; overflow-y: auto; padding-right: 4px; }
+.moss-sheet input, .moss-sheet textarea, .moss-sheet select { background: rgba(255,255,255,.72); color: #20251f; border: 1px solid #66725f; }
+.moss-sheet textarea { min-height: 72px; resize: vertical; width: 100%; }
+.moss-sheet label { font-weight: 700; display: block; margin: 5px 0; }
+.moss-sheet label textarea, .moss-sheet label input { font-weight: 400; }
+.sheet-header { display: flex; gap: 12px; align-items: center; border-bottom: 3px solid #66725f; padding-bottom: 8px; }
+.profile-img { width: 90px; height: 90px; object-fit: cover; border: 2px solid #4c5847; }
+.header-fields { flex: 1; }
+.name { width: 100%; height: 42px; font-size: 26px; font-weight: 800; }
+.identity-grid, .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.stat-strip { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 6px; margin: 10px 0; }
+.stat-strip > div, .resource-row > label, .party-panel { background: rgba(93,112,82,.13); border: 1px solid #75806e; padding: 7px; border-radius: 4px; }
+.stat-strip input { width: 45px; text-align: center; }
+.resource-row { display: grid; grid-template-columns: 1fr 1fr 1.5fr; gap: 6px; }
+.counter { display: inline-flex; align-items: center; gap: 3px; }
+.counter input { width: 46px; text-align: center; }
+.counter button { min-width: 28px; }
+.sheet-tabs { display: flex; gap: 4px; border-top: 1px solid #75806e; border-bottom: 1px solid #75806e; margin: 10px 0; }
+.sheet-tabs .item { flex: 1; text-align: center; padding: 7px; font-weight: 800; }
+.sheet-tabs .item.active { background: rgba(93,112,82,.24); }
+.roll-bar { display: flex; gap: 6px; margin: 8px 0; }
+.roll-bar button { flex: 1; }
+.big-notes { min-height: 250px !important; }
+.checks label { display: flex; align-items: center; gap: 6px; }
+.party-panel { text-align: center; margin-bottom: 10px; }
+.supply-counter { display: flex; justify-content: center; align-items: center; gap: 6px; margin: 8px; }
+.supply-counter input { width: 60px; text-align: center; font-size: 20px; }
+.moss-sheet button { background: #d8dac7; border: 1px solid #66725f; color: #20251f; }
+.moss-sheet button:hover { box-shadow: 0 0 4px #66725f; }
+.moss-and-stone .identity-grid select { width: 100%; min-height: 30px; }
+.moss-and-stone textarea.reference-text { min-height: 150px; resize: vertical; background: rgba(255,255,255,0.35); }
+.moss-and-stone textarea.path-reference { min-height: 300px; }
+.moss-and-stone .rules-note { font-size: 0.85em; opacity: 0.82; padding: 6px 8px; border-left: 3px solid currentColor; }
+
+.moss-and-stone .choice-block { margin: 10px 0; padding: 8px; border: 1px solid #75806e; border-radius: 5px; background: rgba(93,112,82,.08); }
+.moss-and-stone .choice-block h3 { margin: 0 0 6px; border-bottom: 1px solid #9aa394; padding-bottom: 4px; }
+.moss-and-stone .choice-block select { width: 100%; min-height: 30px; margin-top: 3px; }
+.moss-and-stone textarea.compact-reference { min-height: 92px; margin-top: 4px; }
+.moss-and-stone .flaw-controls { display: flex; align-items: center; gap: 8px; margin: 7px 0; }
+.moss-and-stone .flaw-controls button { flex: 1; }
+.moss-and-stone .flaw-status { font-weight: 700; min-width: 105px; text-align: center; }
+.moss-and-stone button:disabled { opacity: .55; cursor: not-allowed; }
+
+.status-panel { margin: 8px 0; display: grid; gap: 6px; }
+.predator-status { padding: 8px 10px; border: 1px solid #6f7e58; background: rgba(61,77,48,.12); border-radius: 5px; }
+.danger-status { padding: 8px 10px; border: 1px solid #8b3b2f; background: rgba(139,59,47,.14); border-radius: 5px; font-weight: 600; }
+.party-panel { margin-bottom: 12px; }
+.party-panel .roll-bar { flex-wrap: wrap; }
+
+/* v0.5.0 — Moss & Stone visual pass */
+.moss-and-stone.sheet.actor .window-content {
+  background: #44483f;
+  padding: 7px;
+}
+
+.moss-and-stone .moss-sheet,
+.moss-sheet {
+  position: relative;
+  background-color: #aaa58f;
+  background-image:
+    linear-gradient(rgba(229, 226, 207, 0.80), rgba(224, 221, 201, 0.82)),
+    url("../assets/sheet-stone-frame.webp");
+  background-size: 100% 100%, 100% 100%;
+  background-position: center, center;
+  background-repeat: no-repeat;
+  border: 2px solid #393b33;
+  border-radius: 8px;
+  box-shadow: inset 0 0 18px rgba(31, 34, 27, 0.38), 0 2px 7px rgba(0,0,0,.25);
+  padding: 26px 26px 22px;
+}
+
+.moss-sheet .sheet-header {
+  background: rgba(75, 79, 66, .18);
+  border: 1px solid rgba(58, 64, 49, .65);
+  border-bottom: 3px solid #4e5a43;
+  border-radius: 7px;
+  padding: 9px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.3);
+}
+
+.moss-sheet .profile-img {
+  border: 3px solid #464a3f;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,.28);
+}
+
+.moss-sheet .name {
+  background: rgba(239, 236, 216, .78);
+  border: 1px solid #5c6252;
+  border-radius: 5px;
+  padding: 4px 8px;
+}
+
+.moss-sheet .stat-strip > div,
+.moss-sheet .resource-row > label,
+.moss-sheet .party-panel,
+.moss-sheet .choice-block,
+.moss-sheet .combat-quickbar,
+.moss-sheet .status-panel > div {
+  background: rgba(220, 219, 197, .70);
+  border: 1px solid #606856;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.35);
+}
+
+.moss-sheet h2,
+.moss-sheet h3 {
+  color: #31372d;
+  text-shadow: 0 1px 0 rgba(255,255,255,.45);
+}
+
+.moss-sheet .sheet-tabs {
+  background: rgba(64, 70, 57, .16);
+  border: 1px solid #626b58;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.moss-sheet .sheet-tabs .item {
+  border-right: 1px solid rgba(80,88,72,.35);
+}
+.moss-sheet .sheet-tabs .item:last-child { border-right: 0; }
+.moss-sheet .sheet-tabs .item.active {
+  background: rgba(61, 79, 50, .32);
+  box-shadow: inset 0 -3px 0 #506842;
+}
+
+.moss-sheet button {
+  background: linear-gradient(#d9d6bd, #bcbba4);
+  border: 1px solid #575f4f;
+  border-radius: 4px;
+  font-weight: 700;
+}
+.moss-sheet button:hover {
+  background: linear-gradient(#e6e2ca, #c9c7ad);
+  box-shadow: 0 0 5px rgba(58, 75, 48, .65);
+}
+
+.combat-quickbar {
+  margin: 9px 0;
+  padding: 8px;
+  border-radius: 6px;
+}
+.combat-quickbar h3 {
+  margin: 0 0 6px;
+  border-bottom: 1px solid rgba(76, 86, 67, .55);
+  padding-bottom: 4px;
+}
+.combat-controls {
+  display: grid;
+  grid-template-columns: 88px minmax(170px, .9fr) 1.6fr;
+  gap: 7px;
+  align-items: end;
+}
+.attack-tn {
+  display: grid;
+  gap: 2px;
+  font-weight: 700;
+  text-align: center;
+}
+.attack-tn input {
+  width: 100%;
+  text-align: center;
+}
+.combat-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.moss-sheet input,
+.moss-sheet textarea,
+.moss-sheet select {
+  background: rgba(245, 242, 221, .76);
+  border-color: #656b5b;
+}
+
+@media (max-width: 700px) {
+  .combat-controls { grid-template-columns: 1fr; }
+  .attack-tn { grid-template-columns: auto 70px; justify-content: start; align-items: center; }
+  .combat-buttons { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat-strip { grid-template-columns: 1fr 1fr; }
+}
+
+
+/* v0.6.0 — ability-aware QoL */
+.attack-style { display: grid; gap: 2px; font-weight: 700; }
+.attack-style select { width: 100%; min-height: 30px; }
+.status-dashboard { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.status-chip { background: rgba(245,242,221,.72); border: 1px solid #66725f; border-radius: 999px; padding: 5px 9px; }
+.enemy-combat-controls { display: grid; grid-template-columns: minmax(140px,.7fr) 2fr; gap: 8px; align-items: end; }
+.enemy-combat-controls label { margin: 0; }
+@media (max-width: 700px) {
+  .combat-controls { grid-template-columns: 1fr; }
+  .enemy-combat-controls { grid-template-columns: 1fr; }
+}
+
+/* v0.7.0 item support */
+.moss-and-stone .inventory-block {
+  margin: 12px 0;
+  padding: 10px;
+  border: 1px solid rgba(53, 67, 45, 0.65);
+  border-radius: 8px;
+  background: rgba(235, 232, 214, 0.82);
+}
+.moss-and-stone .inventory-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px solid rgba(53, 67, 45, 0.35);
+  margin-bottom: 8px;
+}
+.moss-and-stone .inventory-heading h3 { margin: 0 0 5px; }
+.moss-and-stone .inventory-item {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto;
+  gap: 10px;
+  align-items: start;
+  padding: 8px;
+  margin: 6px 0;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.48);
+  border: 1px solid rgba(68, 76, 59, 0.25);
+}
+.moss-and-stone .inventory-item.is-drained { opacity: 0.62; filter: grayscale(.35); }
+.moss-and-stone .inventory-main p { margin: 5px 0 0; white-space: pre-line; }
+.moss-and-stone .inventory-actions { display: flex; flex-direction: column; gap: 4px; min-width: 82px; }
+.moss-and-stone .inventory-actions button { width: 100%; }
+.moss-and-stone .item-state {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 5px;
+  border: 1px solid rgba(52,64,46,.45);
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+.moss-and-stone .active-sammich {
+  margin: 8px 0;
+  padding: 8px;
+  border-left: 4px solid #526848;
+  background: rgba(201, 215, 184, .5);
+}
+.moss-and-stone .active-sammich p { white-space: pre-line; margin: 5px 0; }
+.moss-and-stone .active-sammich.muted { opacity: .7; }
+.moss-and-stone .empty-inventory { font-style: italic; opacity: .7; }
+.moss-and-stone .legacy-items { margin-top: 8px; }
+.moss-and-stone .legacy-items textarea { min-height: 70px; }
+.moss-and-stone.moss-item-sheet .item-content { padding: 12px; }
+.moss-and-stone.moss-item-sheet .item-content > label { display: block; margin: 8px 0; }
+.moss-and-stone.moss-item-sheet .item-description { min-height: 230px; }
+.moss-and-stone.moss-item-sheet .item-type-title { font-weight: 700; opacity: .8; margin-top: 6px; }
+.moss-and-stone.moss-item-sheet .item-flags label { display: flex; gap: 6px; align-items: center; }
+
+/* v0.9.0 — workflow and chat polish */
+.moss-and-stone .gm-tools-panel { text-align: left; }
+.moss-and-stone .gm-tools-panel > button { width: 100%; margin: 3px 0 6px; }
+.moss-and-stone .combat-roster { margin-top: 9px; border-top: 1px solid rgba(68,76,59,.35); padding-top: 7px; }
+.moss-and-stone .combat-roster h3 { margin: 0 0 5px; }
+.moss-and-stone .combat-roster-row {
+  display: grid;
+  grid-template-columns: minmax(120px,1.25fr) .8fr .9fr .8fr;
+  gap: 6px;
+  align-items: center;
+  padding: 5px 7px;
+  margin: 3px 0;
+  background: rgba(255,255,255,.42);
+  border: 1px solid rgba(68,76,59,.22);
+  border-radius: 4px;
+  font-size: .9em;
+}
+
+.chat-message .moss-chat,
+.chat-message .moss-roll-card {
+  position: relative;
+  overflow: hidden;
+  padding: 9px 10px;
+  margin: 2px 0 5px;
+  color: #252a22;
+  background:
+    linear-gradient(rgba(234,232,211,.94), rgba(218,217,194,.94)),
+    radial-gradient(circle at 8% 8%, rgba(77,105,61,.18), transparent 30%);
+  border: 1px solid #66705a;
+  border-left: 5px solid #536847;
+  border-radius: 7px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.55);
+}
+.chat-message .moss-chat::before {
+  content: "";
+  position: absolute;
+  width: 55px;
+  height: 25px;
+  top: -7px;
+  left: -8px;
+  background: radial-gradient(ellipse at center, rgba(64,101,51,.48), rgba(64,101,51,0) 72%);
+  pointer-events: none;
+}
+.chat-message .moss-chat h3 {
+  margin: 0 0 6px;
+  padding-bottom: 4px;
+  color: #33402d;
+  border-bottom: 1px solid rgba(72,84,64,.35);
+  font-size: 1.08em;
+}
+.chat-message .moss-chat p { margin: 4px 0; }
+.chat-message .moss-chat-success { border-left-color: #4f7545; }
+.chat-message .moss-chat-danger { border-left-color: #8a4439; }
+.chat-message .moss-chat-quiet { border-left-color: #777b6d; }
+.chat-message .moss-result {
+  display: inline-block;
+  margin: 5px 0 1px;
+  padding: 3px 7px;
+  border-radius: 999px;
+  font-weight: 900;
+  letter-spacing: .04em;
+}
+.chat-message .moss-result.success { background: rgba(76,119,66,.18); border: 1px solid #55744b; }
+.chat-message .moss-result.failure { background: rgba(138,68,57,.14); border: 1px solid #8a4439; }
+.chat-message .moss-chat-table { width: 100%; border-collapse: collapse; margin-top: 5px; font-size: .9em; }
+.chat-message .moss-chat-table th,
+.chat-message .moss-chat-table td { padding: 4px 5px; border-bottom: 1px solid rgba(72,84,64,.25); text-align: left; }
+.chat-message .moss-chat-table th { color: #394632; }
+
+@media (max-width: 700px) {
+  .moss-and-stone .combat-roster-row { grid-template-columns: 1fr 1fr; }
+}
+
+
+/* v0.11.1 — Foundry Combat Tracker QoL */
+#combat button[data-action="startCombat"],
+#combat .combat-control[data-action="startCombat"],
+.combat-sidebar button[data-action="startCombat"] {
+  min-width: 118px;
+  width: auto;
+  padding-inline: 8px;
+  white-space: nowrap;
+}
+
+/* v0.12.0 — Path resource controls */
+.moss-and-stone .path-resource-line { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:7px 9px; margin:6px 0; border:1px solid rgba(87,103,76,.45); border-radius:5px; background:rgba(255,255,255,.22); }
+.moss-and-stone .path-resource-value { font-size:1.15em; font-weight:800; }
+.moss-and-stone .path-action-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; margin:7px 0; }
+.moss-and-stone .path-action-grid button:last-child { grid-column:1 / -1; }
+.moss-and-stone .status-note { margin:7px 0; padding:7px 9px; border-left:3px solid #6b7b59; background:rgba(255,255,255,.22); }
