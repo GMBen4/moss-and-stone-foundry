@@ -1,0 +1,197 @@
+{
+  "Actor": {
+    "types": [
+      "adventurer",
+      "enemy",
+      "party"
+    ],
+    "templates": {
+      "base": {
+        "notes": ""
+      },
+      "combatant": {
+        "strikes": {
+          "value": 3,
+          "max": 3
+        },
+        "armorSave": 6,
+        "miraculousSave": 6,
+        "predatorDice": 1,
+        "karma": 3,
+        "heroDice": 1,
+        "attackTarget": 3,
+        "attackStyle": "melee"
+      }
+    },
+    "adventurer": {
+      "templates": [
+        "base",
+        "combatant"
+      ],
+      "species": "",
+      "path": "",
+      "inclination1": "",
+      "inclination2": "",
+      "predatorAbility": "",
+      "aspects": "",
+      "flaws": "",
+      "equipment": "",
+      "tinkerTool": "",
+      "whisperStones": "",
+      "sammich": "",
+      "poisonMarks": 0,
+      "flawName": "",
+      "flawUsed": false,
+      "poisonActive": false,
+      "poisonTerminal": false,
+      "predatorState": "",
+      "karmaAvailable": true,
+      "predatorAbilityActive": false,
+      "supplyEffects": {
+        "fatigued": false,
+        "noAmmo": false,
+        "damagedEquipment": false,
+        "brokenSpirits": false,
+        "faithless": false,
+        "hunger": 0
+      },
+      "suppressedInclination": "",
+      "damagedEquipmentCritVulnerable": false,
+      "crouchingCritterPrimed": false,
+      "activeSammichName": "",
+      "activeSammichEffect": "",
+      "activeSammichPreset": "",
+      "activeSammichSecondaryPreset": "",
+      "sammichTempStrikeBonus": 0,
+      "whisperEffects": {
+        "lucky": false,
+        "protection": false
+      },
+      "mossBagUses": 6,
+      "mossRegrowthUsed": false,
+      "mossPrayerUsed": false,
+      "poisonCurePending": false,
+      "medKitUses": 6,
+      "combatMedicRapidBandageRound": "",
+      "combatMedicSurpriseUsedEnemies": [],
+      "poisonKitUses": 6,
+      "harvesterCoating": "",
+      "harvestUses": 0,
+      "harvestedTool": "",
+      "swarmFistOfFuryCombatId": "",
+      "inclination3": "",
+      "frogTraveler": "",
+      "frogWayChoice": "",
+      "frogWayBoon": "",
+      "frogStatus": "ready",
+      "frogMode": "",
+      "frogTargetUuid": "",
+      "frogTargetName": "",
+      "reptileMounted": true,
+      "reptileStrikes": {
+        "value": 3,
+        "max": 3
+      },
+      "reptileSpecialAbility": "",
+      "reptileEvasiveRound": "",
+      "priestStone1Charged": true,
+      "priestStone2Charged": true,
+      "priestMiracleRequest": "",
+      "priestMiracleUrgency": 1,
+      "priestMiracleAloofness": 3,
+      "priestMiracleUsed": false,
+      "priestMiracleBlessingUsed": false,
+      "priestMiracleLastPrayer": [],
+      "priestMiracleLastAloofness": [],
+      "priestMiracleLastAloofnessHigh": 0,
+      "corruptedPower": "",
+      "corruptedCastingIntent": "",
+      "corruptedCastingDice": 1,
+      "corruptedCastingPending": false,
+      "corruptedCastingResults": [],
+      "corruptedCastingPurpose": "",
+      "corruptedCastingPendingIntent": "",
+      "corruptedFlawCount": 0,
+      "corruptedAcquiredFlaws": "",
+      "corruptedTransformed": false,
+      "scholarCollectorInitialized": false,
+      "scholarTacticianPrimed": false,
+      "chefStartingGranted": false,
+      "scarredBoon1": "",
+      "scarredBoon2": "",
+      "shieldIntact": true,
+      "shieldExpertiseUsed": false,
+      "shieldNotTodayUsed": false,
+      "barbarianBloodlustPrimed": false,
+      "hunterAirborne": false
+    },
+    "enemy": {
+      "templates": [
+        "base",
+        "combatant"
+      ],
+      "description": "",
+      "abilities": "",
+      "isHollowEyes": false,
+      "isHollowTongue": false,
+      "harvesterPoisonBane": false,
+      "frogPesterOwnerUuid": "",
+      "frogPesterOwnerName": ""
+    },
+    "party": {
+      "templates": [
+        "base"
+      ],
+      "supplies": {
+        "value": 0,
+        "max": 10
+      },
+      "safeZoneTier": 0,
+      "predatorGuaranteed": false,
+      "predatorGuaranteedBy": "",
+      "supplyPenalties": "",
+      "travelNotes": "",
+      "predatorRoundStatus": "",
+      "damagedEquipmentApplied": false,
+      "hungerStacks": 0
+    }
+  },
+  "Item": {
+    "types": [
+      "whisperStone",
+      "sammich",
+      "tinkerTool"
+    ],
+    "templates": {
+      "base": {
+        "description": ""
+      }
+    },
+    "whisperStone": {
+      "templates": [
+        "base"
+      ],
+      "preset": "",
+      "identified": false,
+      "drained": false,
+      "table": 0,
+      "row": 0
+    },
+    "sammich": {
+      "templates": [
+        "base"
+      ],
+      "preset": "",
+      "table": 0,
+      "row": 0
+    },
+    "tinkerTool": {
+      "templates": [
+        "base"
+      ],
+      "preset": "",
+      "tier": 1,
+      "row": 0
+    }
+  }
+}
